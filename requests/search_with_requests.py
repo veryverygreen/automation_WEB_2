@@ -13,11 +13,11 @@ urls = ["https://www.cbr.ru/dkp/", "https://www.cbr.ru/finstab/", "https://www.c
         "https://www.cbr.ru/lk_uio/", "https://www.cbr.ru/finorg/SiteRequirements/", "https://www.cbr.ru/explan/", "https://www.cbr.ru/certification_center_br/",
         "https://www.cbr.ru/development/"]
 
-with open("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\requests\\links.txt", "w") as file:
+with open("path_to_links.txt", "w") as file:
     file.write("")
 
 def write_txt(url):
-    with open("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\requests\\links.txt", "a") as file:
+    with open("path_to_links.txt", "a") as file:
         file.write(url)
         file.write("\n")
 
@@ -33,8 +33,6 @@ def search_with_requests():
 
 def main():
     search_with_requests()
-    count_links = sum(1 for line in open("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\requests\\links.txt", "r"))
-    print (f"Всего найдено ссылок - {count_links}")
 
 if __name__ == '__main__':
     main()
