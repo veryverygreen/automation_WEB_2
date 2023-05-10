@@ -12,13 +12,13 @@ z - кол-во подменю в правом меню
 
 """Запись ссылок в файл"""
 def write_txt(pdf_url):
-    with open("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\chrome\\links.txt", "a") as file:
+    with open("path_to_links.txt", "a") as file:
         file.write(pdf_url)
         file.write("\n")
 
 """Мультипоток"""
 def thread (i):
-        service = Service("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\chrome\\chromedriver.exe")
+        service = Service("path_to_driver")
         new_driver = webdriver.Chrome(service=service)
         new_driver.maximize_window()
         new_driver.get("https://www.cbr.ru")
@@ -58,7 +58,7 @@ def menu(driver, i):
 
 """Переходы в левом меню сайта и подсчет найденного кол-ва ссылок"""
 def search_with_selenium():
-    service = Service("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\chrome\\chromedriver.exe")
+    service = Service("path_to_driver")
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()
     driver.get("https://www.cbr.ru")
@@ -76,5 +76,5 @@ def search_with_selenium():
 
     driver.quit()
 
-    count_links = sum(1 for line in open("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\chrome\\links.txt", "r"))
+    count_links = sum(1 for line in open("path_to_links.txt", "r"))
     print (f"Всего найдено ссылок - {count_links}")
