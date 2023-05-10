@@ -75,6 +75,3 @@ def search_with_selenium():
         executor.map(thread, i)
 
     driver.quit()
-
-    count_links = sum(1 for line in open("path_to_links.txt", "r"))
-    print (f"Всего найдено ссылок - {count_links}")
