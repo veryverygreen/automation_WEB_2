@@ -56,7 +56,7 @@ def menu(driver, i):
         except Exception:
             pass
 
-"""Переходы в левом меню сайта и подсчет найденного кол-ва ссылок"""
+"""Переходы в левом меню сайта"""
 def search_with_selenium():
     service = Service("path_to_driver")
     driver = webdriver.Chrome(service=service)
