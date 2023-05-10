@@ -66,7 +66,7 @@ def menu(driver, i):
         except Exception:
             pass
 
-"""Переходы в левом меню сайта и подсчет найденного кол-ва ссылок"""
+"""Переходы в левом меню сайта"""
 def search_with_selenium():
     options = webdriver.FirefoxOptions()
     options.binary_location = "path_to_firefox.exe"
