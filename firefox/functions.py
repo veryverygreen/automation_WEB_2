@@ -12,15 +12,15 @@ z - кол-во подменю в правом меню
 
 """Запись ссылок в файл"""
 def write_txt(pdf_url):
-    with open("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\firefox\\links.txt", "a") as file:
+    with open("path_to_links.txt", "a") as file:
         file.write(pdf_url)
         file.write("\n")
 
 """Мультипоток"""
 def thread (i):
     options = webdriver.FirefoxOptions()
-    options.binary_location = ("C:\\Program Files\\Mozilla Firefox\\firefox.exe")
-    service = Service("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\firefox\\geckodriver.exe")
+    options.binary_location = "path_to_firefox.exe"
+    service = Service("path_to_driver")
     new_driver = webdriver.Firefox(service=service, options=options)
     new_driver.maximize_window()
     new_driver.get("https://www.cbr.ru")
@@ -69,8 +69,8 @@ def menu(driver, i):
 """Переходы в левом меню сайта и подсчет найденного кол-ва ссылок"""
 def search_with_selenium():
     options = webdriver.FirefoxOptions()
-    options.binary_location = ("C:\\Program Files\\Mozilla Firefox\\firefox.exe")
-    service = Service("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\firefox\\geckodriver.exe")
+    options.binary_location = "path_to_firefox.exe"
+    service = Service("path_to_driver")
     driver = webdriver.Firefox(service=service, options=options)
     driver.maximize_window()
     driver.get("https://www.cbr.ru")
@@ -88,6 +88,3 @@ def search_with_selenium():
         executor.map(thread, i)
 
     driver.quit()
-
-    count_links = sum(1 for line in open("C:\\Users\\Алексей\\PycharmProjects\\automation_WEB_task_2\\firefox\\links.txt", "r"))
-    print (f"Всего найдено ссылок - {count_links}")
